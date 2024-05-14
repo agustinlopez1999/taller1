@@ -16,13 +16,13 @@ public class SumaClase extends Thread{
     public void run(){
         int suma = k;
         k++;
-        long tiempoInicio = System.currentTimeMillis();
+        /*long tiempoInicio = System.currentTimeMillis();*/
         while(k <= n){
             suma += k;
             k++;
             try {
                 //System.out.println("Suma Thread "+id+ ": " + suma);
-                Thread.sleep(1000);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -30,7 +30,8 @@ public class SumaClase extends Thread{
         k = suma;
         
 
+         /* 
         long tiempoFin = System.currentTimeMillis() - tiempoInicio;
-        System.out.println("Tiempo total del Tread "+id+ ": " + tiempoFin + " ms");
+        System.out.println("Tiempo total del Tread "+id+ ": " + tiempoFin + " ms");*/
     }
 }

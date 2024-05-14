@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class threadsTest {
-    //FUNCIONA SI DIFERENCIA ENTRE N Y K ES MULTIPLO DE 3
+    
     public static int leerNumero(){
         int num;
         @SuppressWarnings("resource")
@@ -20,6 +20,18 @@ public class threadsTest {
         partes = (numero2 - numero1)/3;
         System.out.println("Partes: " + partes);
         
+        System.out.println("EJECUCION EN 1 SOLO HILO:");
+        SumaClase Ejecucion1Hilo = new SumaClase(4, numero1, numero2);
+        Ejecucion1Hilo.start();
+        try{
+            Ejecucion1Hilo.join();
+            System.out.println("Suma de ejecucion de Un Hilo: " + Ejecucion1Hilo.getSuma());
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
+        long tiempoInicio = System.currentTimeMillis();
+
         SumaClase hilo1 = new SumaClase(1,numero1,numero1 + partes);
         System.out.println("HILO 1 ("+ numero1 + " , " + (numero1 + partes) + ")");
         hilo1.start();
@@ -33,6 +45,7 @@ public class threadsTest {
         SumaClase hilo3 = new SumaClase(3, numero1 + 1 , numero2);
         System.out.println("HILO 3 ("+ (numero1 + 1) + " , " + numero2 + ")");
         hilo3.start();
+        
 
         try{
             hilo1.join();
@@ -54,18 +67,12 @@ public class threadsTest {
         }
         sumaTotal = hilo1.getSuma() + hilo2.getSuma() + hilo3.getSuma();
 
+        long tiempoFin = System.currentTimeMillis() - tiempoInicio;
+        System.out.println("Tiempo total MultiThread " + tiempoFin + " ms");
+
         System.out.println(" ");
         System.out.println("Suma Total: " + sumaTotal);
 
-        System.out.println("EJECUCION EN 1 SOLO HILO:");
-        SumaClase hilo4 = new SumaClase(4, 30, 51);
-        hilo4.start();
-        try{
-            hilo4.join();
-            System.out.println("Hilo 4: " + hilo4.getSuma());
-        } catch (InterruptedException e){
-            e.printStackTrace();
-        }
         
 
         //SumaClase sumaParte1 = new SumaClase(1, 5, 7);

@@ -16,7 +16,7 @@ public class SumaClaseImplements implements Runnable{
     public void run() {
         int suma = k;
         k++;
-        long tiempoInicio = System.currentTimeMillis();
+        /*long tiempoInicio = System.currentTimeMillis();*/
         while(k <= n){
             suma += k;
             k++;
@@ -29,9 +29,9 @@ public class SumaClaseImplements implements Runnable{
         }
         k = suma;
         
-
+        /* 
         long tiempoFin = System.currentTimeMillis() - tiempoInicio;
-        System.out.println("Tiempo total del Tread "+id+ ": " + tiempoFin + " ms");
+        System.out.println("Tiempo total del Tread "+id+ ": " + tiempoFin + " ms");*/
     }
 
 
