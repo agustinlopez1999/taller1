@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class threadsTest {
-    //INGRESAR 1 Y 10
+    //FUNCIONA SI DIFERENCIA ENTRE N Y K ES MULTIPLO DE 3
     public static int leerNumero(){
         int num;
         @SuppressWarnings("resource")
@@ -23,13 +23,15 @@ public class threadsTest {
         SumaClase hilo1 = new SumaClase(1,numero1,numero1 + partes);
         System.out.println("HILO 1 ("+ numero1 + " , " + (numero1 + partes) + ")");
         hilo1.start();
+
         numero1 += partes; 
         SumaClase hilo2 = new SumaClase(2, numero1 + 1, numero1 + partes);
         System.out.println("HILO 2 ("+ (numero1 + 1) + " , " + (numero1 + partes) + ")");
         hilo2.start();
+
         numero1 += partes;
-        SumaClase hilo3 = new SumaClase(3, numero1 + 1 , numero1 + partes);
-        System.out.println("HILO 3 ("+ (numero1 + 1) + " , " + (numero1 + partes) + ")");
+        SumaClase hilo3 = new SumaClase(3, numero1 + 1 , numero2);
+        System.out.println("HILO 3 ("+ (numero1 + 1) + " , " + numero2 + ")");
         hilo3.start();
 
         try{
@@ -54,6 +56,16 @@ public class threadsTest {
 
         System.out.println(" ");
         System.out.println("Suma Total: " + sumaTotal);
+
+        System.out.println("EJECUCION EN 1 SOLO HILO:");
+        SumaClase hilo4 = new SumaClase(4, 30, 51);
+        hilo4.start();
+        try{
+            hilo4.join();
+            System.out.println("Hilo 4: " + hilo4.getSuma());
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }
         
 
         //SumaClase sumaParte1 = new SumaClase(1, 5, 7);
