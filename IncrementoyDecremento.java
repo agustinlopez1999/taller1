@@ -15,7 +15,7 @@ public class IncrementoyDecremento {
                 }
                 System.out.println("Incrementado a: " + contadorIncremento);
                 try {
-                    Thread.sleep(10);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -30,7 +30,7 @@ public class IncrementoyDecremento {
                 }
                 System.out.println("Decrementado a: " + contadorDecremento);
                 try {
-                    Thread.sleep(10);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -44,7 +44,7 @@ public class IncrementoyDecremento {
                 }
                 System.out.println("Observador: Incremento = " + contadorIncremento + ", Decremento = " + contadorDecremento);
                 try {
-                    Thread.sleep(10);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -55,7 +55,7 @@ public class IncrementoyDecremento {
         Thread hiloDecrementador = new Thread(decrementador);
         Thread hiloObservador = new Thread(observador);
 
-        //prioridades
+        //prioridades a) termina primero el decrementador
         hiloIncrementador.setPriority(Thread.MIN_PRIORITY);
         hiloDecrementador.setPriority(Thread.MAX_PRIORITY);
         hiloObservador.setPriority(Thread.NORM_PRIORITY);
@@ -79,3 +79,5 @@ public class IncrementoyDecremento {
         System.out.println("Ejecuciones totales del Observador: " + ejecucionesObservador);
     }
 }
+
+//Synchronized asegura la exclusión mutua
