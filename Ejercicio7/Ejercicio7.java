@@ -1,3 +1,4 @@
+package Ejercicio7;
 import java.util.concurrent.CyclicBarrier;
 import java.util.Scanner;
 

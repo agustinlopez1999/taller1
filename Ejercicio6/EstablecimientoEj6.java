@@ -1,3 +1,4 @@
+package Ejercicio6;
 import java.util.concurrent.Semaphore;
 
 public class EstablecimientoEj6 {

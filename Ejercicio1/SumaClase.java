@@ -1,8 +1,9 @@
-public class SumaClaseImplements implements Runnable{
+package Ejercicio1;
+public class SumaClase extends Thread{
 
     private int k, n, id;
-
-    public SumaClaseImplements(int id, int k, int n){
+    
+    public SumaClase(int id, int k, int n){
         this.id = id;
         this.k = k;
         this.n = n;
@@ -13,7 +14,7 @@ public class SumaClaseImplements implements Runnable{
     }
 
     @Override
-    public void run() {
+    public void run(){
         int suma = k;
         k++;
         /*long tiempoInicio = System.currentTimeMillis();*/
@@ -22,17 +23,16 @@ public class SumaClaseImplements implements Runnable{
             k++;
             try {
                 //System.out.println("Suma Thread "+id+ ": " + suma);
-                Thread.sleep(1000);
+                Thread.sleep(0);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
         k = suma;
         
-        /* 
+
+         /* 
         long tiempoFin = System.currentTimeMillis() - tiempoInicio;
         System.out.println("Tiempo total del Tread "+id+ ": " + tiempoFin + " ms");*/
     }
-
-
 }

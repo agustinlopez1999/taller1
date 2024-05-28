@@ -1,3 +1,4 @@
+package Ejercicio8;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -12,6 +13,7 @@ public class Teatro {
     public void mostrarReservas() {
         lock.lock();
         try {
+            System.out.println(" ");
             System.out.println("Estado de las reservas:");
             for (int i = 0; i < plateas.length; i++) {
                 System.out.println("Platea " + i + ": " + (plateas[i] ? "Reservada" : "Disponible"));
