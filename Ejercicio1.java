@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class threadsTest {
+public class Ejercicio1 {
     
     public static int leerNumero(){
         int num;
@@ -72,29 +72,5 @@ public class threadsTest {
 
         System.out.println(" ");
         System.out.println("Suma Total: " + sumaTotal);
-
-        
-
-        //SumaClase sumaParte1 = new SumaClase(1, 5, 7);
-        //SumaClase sumaParte2 = new SumaClase(2, 8, 10);
-        //SumaClase sumaTotal = new SumaClase(3,5,10);
-        //SumaClaseImplements sumaTotal = new SumaClaseImplements(4, 8, 10);
-
-        //sumaParte1.start();
-        //sumaParte2.start();
-        //sumaTotal.start();
-
-        //try {
-            //sumaParte1.join();
-            //sumaParte2.join();
-        //    sumaTotal.join();
-        //} catch (InterruptedException e) {
-        //    e.printStackTrace();
-       //}
-
-        //System.out.println("SUMA PARTE 1 (5,7) = " + sumaParte1.getSuma());
-        //System.out.println("SUMA PARTE 2 (8,10) = " + sumaParte2.getSuma());
-        //System.out.println("");
-        //System.out.println("SUMA TOTAL (5,10) = " + sumaTotal.getSuma());
     }   
 }
