@@ -1,6 +1,6 @@
 import java.util.concurrent.Semaphore;
 
-public class Establecimiento {
+public class EstablecimientoEj6 {
     private static final int MAX_CAPACITY = 5;
     private static final Semaphore semaphore = new Semaphore(MAX_CAPACITY, true); // fair en true para q los hilos accedan en el orden solicitaod
     private static int contadorActual = 0;
@@ -16,7 +16,7 @@ public class Establecimiento {
     private static void entraPersona(int personId) {
         try {
             semaphore.acquire(); // metodo para adquirir el semaforo
-            synchronized (Establecimiento.class) {
+            synchronized (EstablecimientoEj6.class) {
                 contadorActual++;
                 System.out.println("Persona " + personId + " entra. Personas dentro: " + contadorActual);
             }
@@ -30,7 +30,7 @@ public class Establecimiento {
         try {
             Thread.sleep((long) (Math.random() * 6000));
             semaphore.release(); // libera
-            synchronized (Establecimiento.class) {
+            synchronized (EstablecimientoEj6.class) {
                 if (contadorActual > 0) {
                     contadorActual--;
                     System.out.println("Persona " + personId + " sale. Personas dentro: " + contadorActual);
