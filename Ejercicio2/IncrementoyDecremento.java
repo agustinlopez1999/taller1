@@ -1,4 +1,3 @@
-package Ejercicio2;
 public class IncrementoyDecremento {
     private static final int N = 100;
     private static int contadorIncremento = 0;
