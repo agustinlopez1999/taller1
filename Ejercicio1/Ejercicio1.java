@@ -23,11 +23,14 @@ public class Ejercicio1 {
         System.out.println("Partes: " + partes);
         
         System.out.println("EJECUCION EN 1 SOLO HILO:");
+        long tiempoInicio2 = System.currentTimeMillis();
         SumaClase Ejecucion1Hilo = new SumaClase(4, numero1, numero2);
         Ejecucion1Hilo.start();
         try{
             Ejecucion1Hilo.join();
             System.out.println("Suma de ejecucion de Un Hilo: " + Ejecucion1Hilo.getSuma());
+            long tiempoFin2 = System.currentTimeMillis() - tiempoInicio2;
+        System.out.println("Tiempo total q hil " + tiempoFin2 + " ms");
         } catch (InterruptedException e){
             e.printStackTrace();
         }

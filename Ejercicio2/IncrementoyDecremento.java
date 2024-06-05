@@ -56,8 +56,8 @@ public class IncrementoyDecremento {
         Thread hiloObservador = new Thread(observador);
 
         //prioridades a) termina primero el decrementador
-        hiloIncrementador.setPriority(Thread.MIN_PRIORITY);
-        hiloDecrementador.setPriority(Thread.MAX_PRIORITY);
+        hiloIncrementador.setPriority(Thread.MAX_PRIORITY);
+        hiloDecrementador.setPriority(Thread.MIN_PRIORITY);
         hiloObservador.setPriority(Thread.NORM_PRIORITY);
 
         hiloIncrementador.start();

@@ -30,10 +30,8 @@ public final class Persona {
     public static void main(String[] args){
         Persona p1 = new Persona("Juan", 32, "Soltero");
         System.out.println(p1.getEstadoCivil());
-        p1.cambiarEstadoCivil("Casado");
+    
+        p1 = p1.cambiarEstadoCivil("Casado");
         System.out.println(p1.getEstadoCivil());
-
-        Persona personaModificada = p1.cambiarEstadoCivil("Casado");
-        System.out.println(personaModificada.getEstadoCivil());
     }
 }

@@ -11,7 +11,7 @@ public class SimulacionTeatro {
             for (int i = 0; i < 10; i++) {
                 teatro.mostrarReservas();
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(5000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -23,13 +23,13 @@ public class SimulacionTeatro {
                 int platea = (int) (Math.random() * 5);
                 teatro.reservarPlatea(platea);
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(5000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
                 //teatro.cancelarReserva(platea);
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(5000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

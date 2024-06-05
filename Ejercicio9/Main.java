@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args) {
         Tanque tanque = new Tanque(80);
         
-        ValvulaEntrada valvulaE1 = new ValvulaEntrada(tanque, 10);
-        ValvulaSalida valvulaS1 = new ValvulaSalida(tanque, 5);
-        ValvulaEntrada valvulaE2 = new ValvulaEntrada(tanque, 13);
+        ValvulaEntrada valvulaE1 = new ValvulaEntrada(tanque, 2);
+        ValvulaSalida valvulaS1 = new ValvulaSalida(tanque, 6);
+        ValvulaEntrada valvulaE2 = new ValvulaEntrada(tanque, 3);
         ValvulaSalida valvulaS2 = new ValvulaSalida(tanque, 7);
         //Se pueden agregar mas...
 

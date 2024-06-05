@@ -9,7 +9,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Ejercicio4 {
     public static void main(String[] args) {
-        int Max = 50;
+        int Max = 500000;
         Random aleatorio = new Random();
 
         List<Integer> NumerosAleatorios = new ArrayList<>();
@@ -74,11 +74,17 @@ public class Ejercicio4 {
         System.out.println("El CopyOnWriteArrayList busca en: " + (FinTiempo-InicioTiempo) + " nanosegundos");
 
         // Calculo Promedios
+        InicioTiempo = System.nanoTime();
         double PromedioSinP = arraylist.stream().mapToInt(Integer::intValue).average().orElse(0);
         System.out.println("Promedio (Sin paralelismo): " + PromedioSinP);
+        FinTiempo = System.nanoTime();
+        System.out.println("tiempo sin paralelismo " + (FinTiempo-InicioTiempo) + " nanosegundos");
 
+        InicioTiempo = System.nanoTime();
         double PromedioConP = arraylist.parallelStream().mapToInt(Integer::intValue).average().orElse(0);
         System.out.println("Promedio (Con paralelismo): " + PromedioConP);
+        FinTiempo = System.nanoTime();
+        System.out.println("tiempo con paralelismo " + (FinTiempo-InicioTiempo) + " nanosegundos");
     }
     
 }

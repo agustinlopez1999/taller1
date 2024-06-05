@@ -2,12 +2,12 @@ package Ejercicio6;
 import java.util.concurrent.Semaphore;
 
 public class EstablecimientoEj6 {
-    private static final int MAX_CAPACITY = 5;
+    private static final int MAX_CAPACITY = 2;
     private static final Semaphore semaphore = new Semaphore(MAX_CAPACITY, true); // fair en true para q los hilos accedan en el orden solicitaod
     private static int contadorActual = 0;
 
     public static void main(String[] args) {
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 5; i++) {
             int personaId = i;
             new Thread(() -> entraPersona(personaId)).start();
             new Thread(() -> salePersona(personaId)).start();
@@ -16,7 +16,7 @@ public class EstablecimientoEj6 {
 
     private static void entraPersona(int personId) {
         try {
-            semaphore.acquire(); // metodo para adquirir el semaforo
+            //semaphore.acquire(); // metodo para adquirir el semaforo
             synchronized (EstablecimientoEj6.class) {
                 contadorActual++;
                 System.out.println("Persona " + personId + " entra. Personas dentro: " + contadorActual);
@@ -30,7 +30,7 @@ public class EstablecimientoEj6 {
     private static void salePersona(int personId) {
         try {
             Thread.sleep((long) (Math.random() * 6000));
-            semaphore.release(); // libera
+            //semaphore.release(); // libera
             synchronized (EstablecimientoEj6.class) {
                 if (contadorActual > 0) {
                     contadorActual--;
